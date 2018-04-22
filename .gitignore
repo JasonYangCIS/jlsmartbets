@@ -43,4 +43,4 @@ publish
 .idea
 css/*.css
 jlsmartbets.txt
-
+node_modules
