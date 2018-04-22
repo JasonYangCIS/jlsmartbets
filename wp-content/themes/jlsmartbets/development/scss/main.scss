@@ -1,0 +1,501 @@
+/*!
+Theme Name: jlsmartbets
+Theme URI: http://www.jlsmartbets.com
+Description: A theme for jlsmartbets
+Version: 2.0
+Author: jasonyangdev
+Author URI: http://www.jasonyangdev.com
+License: TBD
+License URI: http://www.jasonyangdev.com
+*/
+
+@import '_grid';
+@import '_normalize';
+@import '_tools';
+@import '_gravityforms';
+
+/* ==|== primary styles =====================================================
+   Author: jasonyangdev 
+   ========================================================================== */
+
+
+
+   .alignleft {  display: block; float:left; margin-right: 10px; }
+   .alignright { display: block; float:right; margin-left: 10px; }
+   .aligncenter { display: block; margin:0 auto; text-align:center;  }
+   .left { float:left; }
+   .right { float:right; }
+   .no-left { margin-left: 0 !important;}
+   .no-right { margin-right: 0 !important;}
+   .padding-left { padding-left:20px; }
+   .padding-right { padding-right:20px; }
+   .margin-top { margin-top:40px;  }
+   .margin-left { margin-left:20px; }
+   .clean { margin:0; padding:0;  }
+   .clear { clear:both; }
+   .relative { position:relative; }
+   .hidden { display: none !important; visibility: hidden; }
+   .wp-caption { max-width: 100%; }
+   .wp-caption-text {}
+   .sticky {}
+   .gallery-caption { max-width: 100%; }
+   .bypostauthor {}
+
+   * { 
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  -o-box-sizing: border-box; box-sizing: border-box; 
+    font-weight:normal;  
+  }
+
+  .visuallyhidden {
+    @include hidden();
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    //min-width: 24em;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle; 
+  }
+
+
+  #header, #main, .footer, .above-footer {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .out-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    @media #{$large}{
+      padding: 0px 70px;
+    }
+    &.wrapper-mobile {
+      padding: 0;
+      .grid-12 {
+        width: 100%;
+        margin: 0;
+        @media #{$large} {
+          @include column(12);
+          position: relative;
+        } 
+      }
+    }
+    @media #{$max-medium} {
+     padding: 0 12px;
+   }
+ }
+
+ .grid-12 {
+  @include column(12);
+  position: relative;
+}
+
+.grid-12-mobile {
+  float: left;
+  width: 100%;
+  position: relative;
+  @media #{$medium} {
+    @include column(12);
+  }
+}
+
+.no-decor {
+  text-decoration: none;
+}
+
+
+button, input[type='text'], input[type='email'], input[type='password'], input[type='submit'] { 
+ color: #323232;
+ height: 36px;
+ line-height: 36px; 
+ margin-left:20px; display:block;
+ &:active { opacity: 0.5;  }
+ float: left;
+}
+button span, input[type='submit'] {
+  line-height: 36px;
+}
+input[type='checkbox'], input[type='radio'] {
+  margin-right: 5px;
+}
+
+button, input[type='submit'] {
+ padding: 0 10px !important;
+ max-width: 100%;
+}
+
+
+
+/* Forms */
+input[type=text],input[type=email],
+input[type=password],
+textarea {
+  margin-left:0; 
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #888;
+  width: 100%;
+  padding: 0px 10px;
+  @include rounded-corners(0); 
+  @media #{$medium} {
+    width: 280px;
+  }
+}
+select {
+  font-size: 16px;
+}
+input[type=text]:focus,
+textarea:focus {
+  color: #373737;
+}
+textarea {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+// google voice color change to white
+span.gc-cs-link  {
+  color:black !important;
+}
+// remove the skype formating 
+span.skype_pnh_container {display:none !important;}
+span.skype_pnh_print_container {display:inline !important;} 
+
+h1,h2,h3,h4,h5,h6 {
+  clear:both; 
+}
+
+blockquote {
+  padding: 20px; 
+  background: #ccc;
+  margin:0;
+}
+
+.gallery-thumbs, .youtube_gallery_item {
+  list-style:none; 
+  margin:0; padding:0; 
+  @include clearfix();
+}
+
+
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+
+
+.gallery-thumbs li, .gallery-item, .youtube_gallery .youtube_gallery_item {
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px;
+  width: 50% !important;
+  &:nth-child(2n+1) {
+    clear: left;
+  }
+  @media #{$medium} {
+    width: 25% !important;
+    &:nth-child(2n+1) {
+      clear: none;
+    }
+    &:nth-child(4n+1) {
+      clear: left;
+    }
+  }
+  img {
+    width:100%; 
+    margin: 0;
+  }  
+}
+
+.youtube_gallery {
+  .youtube_gallery_item .ytsg_play {
+    @include hidden();
+  }
+  .youtube_gallery_caption {
+    margin-top: 5px;
+  }
+}
+
+#colorbox {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing:content-box;
+}
+
+
+//fancy box reset
+
+#fancybox-wrap, #fancybox-content {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+//breadcrumbs 
+.breadcrumbs {
+
+  clear: both;
+  ul {
+   clear: both;
+   list-style:none; text-transform:lowercase;
+   li { 
+     float:left; padding-right:0px; margin-right:0.5em;
+     a { text-decoration:none; padding-right:0.3em;}
+   }
+   li.link {
+     &:after {
+      content: '>';             
+    }
+  }
+}
+}
+
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { 
+  color: inherit; 
+  font-size: inherit;
+  font-weight: inherit
+}
+
+p a {
+  font-size: inherit;
+  font-weight: inherit
+}
+
+@import '_background';
+@import '_fonts';
+
+// end defaults
+
+@import '_common';
+@import '_header';
+@import '_middle';
+@import '_footer';
+@import '_plugins';
+@import '_sidebar';
+@import '_animation';
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+ .ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+ .hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+ .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+ .invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+ .clearfix:before,
+ .clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+ .clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+   @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+  }
+
+  @media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+  }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+   @media print {
+    * {
+      background: transparent !important;
+      color: #000 !important; /* Black prints faster: h5bp.com/s */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+     .ir a:after,
+     a[href^="javascript:"]:after,
+     a[href^="#"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    @page {
+      margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+
+.IE-warning{
+  width: 100%;
+  float: left;
+  display: block;
+  background-color: #ffa500;
+  padding: 10px 12px;
+  text-align: center;
+  a{
+    color: #FC0000;
+  }
+}

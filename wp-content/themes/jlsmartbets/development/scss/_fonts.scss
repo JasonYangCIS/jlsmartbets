@@ -1,0 +1,19 @@
+@import '_legend';
+@import '_tools';
+/*
+* Just Font Families, Colors, Sizes, Weights, Style goes here
+*/
+
+/* example font change for desktop html {
+	@media #{$large} {
+	font-size: 125%;
+	}
+} */
+
+a {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+}

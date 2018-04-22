@@ -1,0 +1,155 @@
+// Default Tools and stuff here
+
+@import '_legend';
+
+//accepts rem amounts
+@mixin fs ($sizeValue: 1 , $imp: '') {
+  font-size: ($sizeValue * 10) + px + $imp;
+  font-size: $sizeValue + rem + $imp;
+}
+// accepts pixel amounts
+@mixin rfs  ($sizeValue: 16 , $imp: '') {
+  font-size: $sizeValue  + px + $imp;
+  font-size: ($sizeValue / 10 ) + rem + $imp;
+}
+
+
+@mixin clearfix() { *zoom: 1; 
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  } 
+}
+
+// animation 
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin fonts($f:sans-serif,$w:normal,$s:1,$c:#000, $i: normal) {
+  @if $f != $f1  {
+    font-family: $f;
+  }
+  @if $w != $w1 {
+     font-weight: $w;
+  }
+  @include rfs( $s); 
+  color: $c;
+  @if $i != normal {
+      font-style: $i;
+  }
+} 
+@mixin bg($c:white) {
+    background-color: $c;
+}
+@mixin transform($a:1px){
+    -webkit-transform: $a;
+    -moz-transform: $a;
+    -o-transform: $a;
+    transform: $a;
+}
+
+@mixin rotateText ($a) {
+    -ms-transform: rotate($a);
+    -moz-transform: rotate($a); 
+    -webkit-transform: rotate($a);
+    -o-transform: rotate($a);                   
+    transform: rotate($a);
+}
+@mixin box-shadow ($a) {
+    -webkit-box-shadow: $a;
+    -moz-box-shadow: $a; 
+    box-shadow: $a ; 
+
+}
+@mixin rounded-corners ($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin transition ($a: all 0.5s ease  ) {
+    -webkit-transition: $a;
+    -o-transition: $a;
+    -moz-transition: $a;
+    transition: $a;
+}
+
+@mixin clean() { margin:0; padding:0;  }
+@mixin clear() { clear:both; }
+@mixin left() {float:left;  } 
+
+@mixin hidden() {
+  display: none !important;
+}
+
+@mixin displayFlex () {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flex;         /* IE 11 */
+    display: -ms-flexbox;      /* IE10 uses -ms-flexbox */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+
+@mixin alignSelf ($position) {
+  -webkit-align-self: $position;
+  -ms-align-self: $position;
+  align-self: $position;
+}
+
+@mixin alignItems ($position) {
+  -webkit-align-items: $position;
+  -ms-align-items: $position;
+  align-items: $position;
+}
+
+@mixin justifyContent ($position) {
+  -webkit-justify-content: $position;
+  -ms-justify-content: $position;
+  justify-content: $position;
+}
+
+@mixin flexDirection ($direction) {
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flexWrap($wrap){
+ -webkit-flex-wrap: $wrap; /* Safari 6.1+ */
+ -ms-flex-wrap: $wrap;
+ flex-wrap: $wrap;
+}
