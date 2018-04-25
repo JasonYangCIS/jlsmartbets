@@ -16,38 +16,38 @@
   <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
   <head>
     <?php if(stripslashes(get_option("ready_logo_img") != "")): ?>
-    <?php $logo = stripslashes(get_option("ready_logo_img")); ?>
-  <?php else: ?>
-  <?php $logo = get_template_directory_uri() . "/img/logo.png"; ?>
-<?php endif; ?>
-<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-<?php if ( has_post_thumbnail() ){ ?>
-<meta property="og:image" content="<?php echo $url; ?>"/> 
-<?php }else{ ?>  
-<meta property="og:image" content="<?php echo $logo; ?>"/> 
-<?php }; ?>
+      <?php $logo = stripslashes(get_option("ready_logo_img")); ?>
+    <?php else: ?>
+      <?php $logo = get_template_directory_uri() . "/img/logo.png"; ?>
+    <?php endif; ?>
+    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+    <?php if ( has_post_thumbnail() ){ ?>
+    <meta property="og:image" content="<?php echo $url; ?>"/> 
+    <?php }else{ ?>  
+    <meta property="og:image" content="<?php echo $logo; ?>"/> 
+    <?php }; ?>
 
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php
-global $page, $paged, $post;
-wp_title( '|', true, 'right' );
-bloginfo( 'name' );
-$site_description = get_bloginfo( 'description', 'display' );
-if ( $site_description && ( is_home() || is_front_page() ) )
-  echo " | $site_description";
-if ( $paged >= 2 || $page >= 2 )
-  echo ' | ' . sprintf( __( 'Page %s', 'ReadyArtwork' ), max( $paged, $page ) );
-?></title>
-<meta http-equiv="cleartype" content="on">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">   
-<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" /> 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <title><?php
+    global $page, $paged, $post;
+    wp_title( '|', true, 'right' );
+    bloginfo( 'name' );
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+      echo " | $site_description";
+    if ( $paged >= 2 || $page >= 2 )
+      echo ' | ' . sprintf( __( 'Page %s', 'ReadyArtwork' ), max( $paged, $page ) );
+    ?></title>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">   
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" /> 
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory');  ?>/css/main.css" />
-<script type="text/javascript" src="<?php  echo get_template_directory_uri()  ?>/js/cssrefresh.js"></script>  
+    <link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory');  ?>/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php wp_head(); ?>
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
