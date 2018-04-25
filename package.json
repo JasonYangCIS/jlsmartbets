@@ -8,7 +8,7 @@
     "scripts": {
         "scss": "node-sass -r --output-style compressed -o wp-content/themes/jlsmartbets/css wp-content/themes/jlsmartbets/development/scss",
         "uglifyjs-folder": "uglifyjs-folder wp-content/themes/jlsmartbets/development/js/ -o wp-content/themes/jlsmartbets/js/script.js",
-        "serve": "browser-sync start --proxy localhost:8383/jlsmartbets --files \"wp-content/themes/jlsmartbets/css/*.css, wp-content/themes/jlsmartbets/js/*.js\"",
+        "serve": "browser-sync start --proxy localhost/jlsmartbets --files \"wp-content/themes/jlsmartbets/css/*.css, wp-content/themes/jlsmartbets/js/*.js\"",
         "build:css": "npm run scss",
         "build:js": "npm run uglifyjs-folder",
         "build:all": "npm run build:css && npm run build:js",
