@@ -26,14 +26,6 @@ Thumbs.db
 .esproj
 nbproject
 
-# Dreamweaver added files
-_notes
-dwsync.xml
-
-# Komodo
-*.komodoproject
-.komodotools
-
 # Folders to ignore
 .hg
 .svn
@@ -44,3 +36,4 @@ publish
 css/*.css
 jlsmartbets.txt
 node_modules
+uploads
