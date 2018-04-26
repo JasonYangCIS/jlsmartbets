@@ -13,7 +13,7 @@ a {
 	color: inherit;
 }
 
-p {
+p, blockquote {
 	font-family: 'Open Sans', sans-serif;
 	@include rfs(11);
 	font-weight: 400;
@@ -22,5 +22,41 @@ p {
 	@media #{$medium} {
 		@include rfs(14);
 		line-height: 16px;
+	}
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+.header, nav {
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+	@include rfs(12);
+	font-weight: 600;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	a {
+		text-decoration: none;
 	}
 }

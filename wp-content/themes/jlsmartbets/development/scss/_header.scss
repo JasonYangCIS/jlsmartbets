@@ -2,3 +2,202 @@
 @import '_tools';
 @import '_grid';
 
+header#header {
+	background: $black;
+	overflow: visible;
+	.wrapper {
+		overflow: visible;
+		@include displayFlex();
+		width: 100%;
+		@include flexWrap(wrap);
+		@media #{$large} {
+			overflow: hidden;
+		}
+	}
+	.woo-commerce-buttons {
+		@include column(3);
+		@include displayFlex();
+		@include justifyContent(space-around);
+		@include alignItems(center);
+		@media #{$large} {
+			@include column(2);
+			@include displayFlex();
+			@include order(3);
+			position: relative;
+			&:before {
+				height: 16px;
+				border-left: 1px solid $white;
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+		.my-account a {
+			display: block;
+			background: url('../img/myaccount.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			height: 16px;
+			width: 16px;
+		}
+		.cart-contents:before {
+			content: "";
+			display: block;
+			background: url('../img/cart.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			height: 20px;
+			width: 20px;
+		}
+		.cart-contents:hover {
+			text-decoration: none;
+		}
+		.cart-contents-count {
+			color: #fff;
+			background-color: #2ecc71;
+			font-weight: bold;
+			border-radius: 10px;
+			padding: 1px 6px;
+			line-height: 1;
+			font-family: Arial, Helvetica, sans-serif;
+			vertical-align: top;
+		}
+	}
+	.header_container {
+		@include column(6);
+		@include displayFlex();
+		@include alignItems(center);
+		@include justifyContent(center);
+		@media #{$large} {
+			@include column(2);
+			@include displayFlex();
+			@include order(1);
+		}
+		h1 {
+			margin: 0;
+		}
+		.logo {
+			width: 100%;
+			text-align: center;
+			@media #{$large} {
+				text-align: left;
+			}
+			img {
+				max-width: 120px;
+				margin: 0 auto;
+				display: block;
+				width: auto;
+				@media #{$medium} {
+					max-width: 170px;
+				}
+				@media #{$large} {
+					max-width: 100%;
+					margin: 0;
+				}
+			}
+		}
+	}
+	.mobile-hamburger {
+		@include column(3);
+		position: relative;
+		height: 60px;
+		@media #{$large} {
+			display: none;
+		}
+		span {
+			position: absolute;
+			content: '';
+			background: $white;
+			display: block;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			max-width: 20px;
+			@include transition(all 0.5s ease);
+			width: 100%;
+			height: 2px;
+			left: 0;
+			&:before, &:after {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				content: '';
+				background: $white;
+				display: block;
+				margin: auto;
+				@include transition(all 0.5s ease);
+			}
+			&:before {
+				top: -10px;
+			}
+			&:after {
+				bottom: -10px;
+			}
+		}
+		&.active {
+			span {
+				background: $black;
+				&:before {
+					top: 0;
+					bottom: 0;
+					@include transform(rotate(135deg));
+				}
+				&:after {
+					top: 0;
+					bottom: 0;
+					@include transform(rotate(-135deg));
+				}
+			}
+		}
+	}
+
+	.menu-header-container {
+		@include column(12);
+		opacity: 0;
+		max-height: 0;
+		overflow: hidden;
+		@include transition(0.3s all ease);
+		@media #{$large} {
+			@include column(8);
+			max-height: 1000px;
+			opacity: 1;
+			@include order(2);
+		}
+		&.active {
+			max-height: 1000px;
+			opacity: 1;
+			position: relative;
+			overflow: visible;
+			&:before {
+				position: absolute;
+				border-top: 1px solid $white;
+				content: '';
+				display: block;
+				width: calc(100% + 24px + (1.04167% * 2));
+				left: calc(-12px - 1.04167%);
+				@media #{$large} {
+					display: none;
+				}
+			}
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			@media #{$large} {
+				text-align: right;
+			}
+			li {
+				text-align: center;
+				margin: 30px 0;
+				@media #{$large} {
+					display: inline-block;
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}
+

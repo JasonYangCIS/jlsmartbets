@@ -5,6 +5,12 @@ jQuery(document).ready(function() {
         jQuery('.slickslider ul.slides').slick();
     }
 
+     /* Mobile hamburger toggle */
+    jQuery('.mobile-hamburger').click(function(){
+        jQuery(this).toggleClass('active');
+        jQuery('.menu-header-container').toggleClass('active');
+    });
+
 	// TO TOP
     // hide #back-top first
     jQuery(".back-to-top").hide();

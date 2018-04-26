@@ -869,3 +869,51 @@ function gform_column_splits( $content, $field, $value, $lead_id, $form_id ) {
   return $content;
 }
 add_filter( 'gform_field_content', 'gform_column_splits', 10, 5 );
+
+if( function_exists('acf_add_options_page') ) {
+
+  $option_page = acf_add_options_page(array(
+    'page_title'  => 'Footer Settings',
+    'menu_title'  => 'Footer Settings',
+    'menu_slug'   => 'footer-settings',
+    'capability'  => 'edit_pages',
+    'redirect'  => false
+  ));
+
+  $option_page = acf_add_options_page(array(
+    'page_title'  => 'Header Settings',
+    'menu_title'  => 'Header Settings',
+    'menu_slug'   => 'header(string)-settings',
+    'capability'  => 'edit_pages',
+    'redirect'  => false
+  ));
+
+  $option_page = acf_add_options_page(array(
+    'page_title'  => 'Product Archive Settings',
+    'menu_title'  => 'Product Archive Settings',
+    'menu_slug'   => 'product-settings',
+    'capability'  => 'edit_pages',
+    'redirect'  => false
+  ));
+}
+
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+function my_header_add_to_cart_fragment( $fragments ) {
+ 
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+        <?php            
+    }
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );

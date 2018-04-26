@@ -44,34 +44,49 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 
     <link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory');  ?>/css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php wp_head(); ?>
-</head>
+  </head>
 
-<body <?php body_class(); ?>>
-  <div id="container">
-    <header id="header" class="header">
-      <!--[if lte IE 9]> <div class="IE-warning"> <a href="https://support.microsoft.com/en-us/products/internet-explorer">You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.</a></div> <![endif]-->
+  <body <?php body_class(); ?>>
+    <div id="container">
+      <header id="header" class="header">
+        <!--[if lte IE 9]> <div class="IE-warning"> <a href="https://support.microsoft.com/en-us/products/internet-explorer">You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.</a></div> <![endif]-->
+        <div class="wrapper">
+          <a class="mobile-hamburger" href="javascript:void(0);"><span></span></a>
+          <div class="header_container">
+            <div class="header_logo">
+              <?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
+              <<?php echo $heading_tag; ?> id="site-title">
+              <a class="logo" href="<?php echo home_url()?>"><img alt="<?php bloginfo('name') ?>" src="<?php echo $logo; ?>"/><span class="visuallyhidden"><?php bloginfo('name') ?></span></a>
+              </<?php echo $heading_tag; ?>>
+            </div>
+          </div>
+          <div class="woo-commerce-buttons">
+            <div class="my-account">
+              <a href="<?php echo get_home_url() . '/my-account'; ?>"></a>
+            </div>
+            <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
-      <div class="mobile_nav" data-menu="off">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/mobile_nav.jpg"/>
-      </div>
-      
-      <div class="header_container">
-        <div class="header_logo">
-          <?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-          <<?php echo $heading_tag; ?> id="site-title">
-          <a class="logo" href="<?php echo home_url()?>"><img alt="<?php bloginfo('name') ?>" src="<?php echo $logo; ?>"/><span class="visuallyhidden"><?php bloginfo('name') ?></span></a>
-          </<?php echo $heading_tag; ?>>
+              $count = WC()->cart->cart_contents_count;
+              ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php 
+              if ( $count > 0 ) {
+                ?>
+                <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+                <?php
+              }
+              ?></a>
+
+              <?php } ?>
+          </div>
+          <?php wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'readymobile_menu', 'theme_location' => 'primary', 'link_before' => '' ) ); ?>   
         </div>
-      </div>
 
-      <?php wp_nav_menu( array( 'container' => 'nav', 'fallback_cb' => 'readymobile_menu', 'theme_location' => 'primary', 'link_before' => '' ) ); ?>	  
 
-    </header>
-    
-    <main id="main">
+      </header>
+
+      <main id="main">
 
 
