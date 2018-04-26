@@ -18,7 +18,7 @@ p, blockquote {
 	@include rfs(11);
 	font-weight: 400;
 	line-height: 13px;
-	color: $black;
+	color: $dkgrey;
 	@media #{$medium} {
 		@include rfs(14);
 		line-height: 16px;
@@ -26,27 +26,99 @@ p, blockquote {
 }
 
 h1 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	@include rfs(18);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 29px;
+		@include rfs(25);
+	}
+	@media #{$large} {
+		line-height: 37px;
+		@include rfs(33);
+	}
 }
 
 h2 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	@include rfs(18);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 27px;
+		@include rfs(24);
+	}
+	@media #{$large} {
+		line-height: 36px;
+		@include rfs(32);
+	}
 }
 
 h3 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 21px;
+	@include rfs(17);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 27px;
+		@include rfs(23);
+	}
+	@media #{$large} {
+		line-height: 34px;
+		@include rfs(30);
+	}
 }
 
 h4 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 20px;
+	@include rfs(16);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 25px;
+		@include rfs(21);
+	}
+	@media #{$large} {
+		line-height: 32px;
+		@include rfs(28);
+	}
 }
 
 h5 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 18px;
+	@include rfs(14);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 23px;
+		@include rfs(19);
+	}
+	@media #{$large} {
+		line-height: 30px;
+		@include rfs(26);
+	}
 }
 
 h6 {
-
+	font-family: 'Open Sans', sans-serif;
+	line-height: 16px;
+	@include rfs(12);
+	font-weight: 700;
+	color: $dkgrey;
+	@media #{$medium} {
+		line-height: 23px;
+		@include rfs(17);
+	}
+	@media #{$large} {
+		line-height: 28px;
+		@include rfs(24);
+	}
 }
 
 .header, nav {
