@@ -385,21 +385,6 @@ function ready_slider_images () {
   register_post_type('slider_images',$args);
 }
 
-add_action('init', 'ready_frontpage_info');
-function ready_frontpage_info () {
-  $args = array(
-    'label' => __('Front Page Info', 'ReadyArtwork' ),
-    'singular_label' => __('Front Page Info', 'ReadyArtwork' ),
-    'public' => false,
-    'show_ui' => true,
-    'capability_type' => 'page',
-    'hierarchical' => false,
-    'rewrite' => false,   
-    'supports' => array('title','editor' , 'page-attributes')
-    );
-  register_post_type('frontpage_info',$args);
-}
-
 // Add meta boxes functionality
 
 add_action("admin_init", "admin_init");  

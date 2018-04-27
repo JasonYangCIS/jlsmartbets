@@ -41,22 +41,20 @@
 
   <section class="content content-full front-page-content">
     <article>
-
-      <?php query_posts( array('post_type' => 'frontpage_info','posts_per_page'=>4, 'orderby' => 'menu_order', 'order' => 'ASC' ,  'post_status'=>'publish'  )); ?>
-      <div class="front_page_wrapper">
-        <?php if(have_posts()):
-        while (have_posts()) :  the_post(); ?>
-        <div class="home-block-container">
-          <?php echo'<h6>'; the_title(); echo'</h6>';  ?>
-          <div class="frontpage_info">
-            <?php echo the_content('Read more...'); ?>
-          </div>
+      <div class="main-content">
+        <div class="main-content-inner">
+          <h1><?php the_title(); ?></h1>
+          <?php the_content(); ?>
+          <div class="main-content-button"><?php echo get_field('main_content_button'); ?></div>
         </div>
-      <?php endwhile; endif;?>
-    </div>
-    <?php wp_reset_query(); ?>
-  </article>
-</section>
+      </div>
+      <div class="homepage-image">
+        <?php if ( has_post_thumbnail() ): ?>
+          <?php the_post_thumbnail();  ?>
+        <?php endif;?>
+      </div>
+    </article>
+  </section>
 
 
-<?php  get_footer(); ?>
+  <?php  get_footer(); ?>
