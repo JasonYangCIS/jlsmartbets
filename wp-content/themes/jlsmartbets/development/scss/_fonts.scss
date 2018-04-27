@@ -131,6 +131,9 @@ h6 {
 	a {
 		text-decoration: none;
 	}
+	li.current-menu-item a, a:hover {
+		font-weight: 700;
+	}
 }
 
 .slider-content {
@@ -218,6 +221,9 @@ footer#footer {
 		@media #{$large} {
 			@include rfs(14);
 			line-height: 16px;
+		}
+		&:hover {
+			font-weight: 700;
 		}
 	}
 	.copyright {
