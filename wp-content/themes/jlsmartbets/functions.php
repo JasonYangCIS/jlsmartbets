@@ -116,7 +116,8 @@ function ReadyArtwork_setup() {
   if ( is_readable( $locale_file ) )
     require_once( $locale_file );
 
-  register_nav_menu( 'primary', __( 'Primary Menu', 'ReadyArtwork' ) );	
+  register_nav_menu( 'primary', __( 'Primary Menu', 'ReadyArtwork' ) ); 
+  register_nav_menu( 'footer', __( 'Footer Menu', 'ReadyArtwork' ) );	
 
 }
 endif;
@@ -207,9 +208,9 @@ function ReadyArtwork_fields($fields) {
 function ReadyArtwork_widgets_init() {
 
   register_sidebar( array(
-   'name' => __( 'Home Sidebar', 'ReadyArtwork'  ),
-   'id' => 'sidebar-home',
-   'description' => __( 'Edit Home Sidebars Here ', 'ReadyArtwork' ),
+   'name' => __( 'Social Media Sidebar', 'ReadyArtwork'  ),
+   'id' => 'sidebar-social-media',
+   'description' => __( 'Edit Social Media Sidebars Here ', 'ReadyArtwork' ),
    'before_widget' => '<div id="%1$s" class="widget %2$s">',
    'after_widget' => "</div>",
    'before_title' => '<h3 class="widget-title">',

@@ -206,3 +206,23 @@ h6 {
 		color: $black;
 	}
 }
+
+footer#footer {
+	.menu-footer-menu-container a {
+		@include rfs(10);
+		line-height: 12px;
+		@media #{$medium} {
+			@include rfs(12);
+			line-height: 14px;
+		}
+		@media #{$large} {
+			@include rfs(14);
+			line-height: 16px;
+		}
+	}
+	.copyright {
+		@include rfs(10);
+		line-height: 12px;
+		color: $white;
+	}
+}
