@@ -132,3 +132,57 @@ h6 {
 		text-decoration: none;
 	}
 }
+
+.slider-content {
+	h2 {
+		font-weight: 700;
+		color: $white;
+		@include rfs(22);
+		line-height: 26px;
+		letter-spacing: 2px;
+		@media #{$medium} {
+			@include rfs(38);
+			line-height: 42px;
+		}
+		@media #{$large} {
+			letter-spacing: 10px;
+			@include rfs(100);
+			line-height: 102px;
+		}
+	}
+	h3 {
+		font-weight: 700;
+		letter-spacing: 1px;
+		color: $white;
+		@include rfs(11);
+		line-height: 13px;
+		@media #{$medium} {
+			@include rfs(20);
+			line-height: 24px;
+		}
+		@media #{$large} {
+			letter-spacing: 5px;
+			@include rfs(50);
+			line-height: 54px;
+		}
+	}
+	.slider-button a {
+		color: $black;
+		font-weight: 700;
+		@include rfs(10);
+		line-height: 12px;
+		text-decoration: none;
+		text-transform: uppercase;
+		@media #{$medium} {
+			@include rfs(12);
+			line-height: 16px;
+		}
+		@media #{$large} {
+			@include rfs(14);
+			line-height: 18px;
+		}
+		&:hover {
+			color: $white;
+		}
+	}
+}
