@@ -195,3 +195,28 @@
         }
     }
 }
+
+.nf-form-cont {
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+    h3 {
+        text-align: center;
+        width: 100%;
+    }
+    nf-field {
+        .nf-field-element{
+        text-align: center;
+            input:not([type='button']) {
+                border: 1px solid $black;
+                height: 50px;
+                width: 100%;
+                padding: 0 20px;
+            }
+            textarea {
+                border: 1px solid $black;
+                padding: 20px;
+            }
+        }
+    }
+}

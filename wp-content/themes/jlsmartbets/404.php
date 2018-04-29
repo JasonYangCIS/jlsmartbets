@@ -13,10 +13,6 @@ get_header(); ?>
 		<article>
 			<h1><?php _e( 'Not Found', 'ReadyArtwork' ); ?></h1>
 			<p><?php _e( 'Sorry, but the page you were trying to view does not exist.', 'ReadyArtwork' ); ?></p>
-			<?php /*
-			<p><?php _e( 'Sorry, but the page you were trying to view does not exist. Perhaps searching will help.', 'ReadyArtwork' ); ?></p>
-			<?php get_search_form(); ?>
-			*/ ?>
 		</article>
 	</section>
 </div>

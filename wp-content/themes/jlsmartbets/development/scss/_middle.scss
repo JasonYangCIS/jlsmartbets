@@ -28,7 +28,8 @@ header, main, footer {
 // Button Styling
 .main-content-button a, 
 .button,
-section.about p:last-of-type a:last-of-type {
+section.about p:last-of-type a:last-of-type,
+input[type=button] {
 	background: $black;
 	padding: 8px 30px;
 	@include transition(all 0.15s ease);
