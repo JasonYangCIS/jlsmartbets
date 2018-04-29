@@ -161,3 +161,17 @@
           -webkit-order: $val;  
             order: $val;
 }
+
+@mixin flexGrow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+}
+
+@mixin flexShrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+}

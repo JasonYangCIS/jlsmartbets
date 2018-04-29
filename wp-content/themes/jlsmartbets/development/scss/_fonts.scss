@@ -190,7 +190,9 @@ h6 {
 	}
 }
 
-.main-content-button a, .button {
+.main-content-button a, 
+.button,
+section.about p:last-of-type a:last-of-type{
 	color: $white;
 	font-weight: 700;
 	@include rfs(10);

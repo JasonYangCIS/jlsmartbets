@@ -10,13 +10,12 @@
 get_header(); ?>
 
 <?php $slug = get_post( $post )->post_name; ?>
+<div class="wrapper">
+	<section class="content content-full cms-pages <?php echo $slug;?>">
 
-<section class="content content-left <?php echo $slug;?>">
+		<?php get_template_part( 'loop', 'page' ); ?>
 
-    <?php get_template_part( 'loop', 'page' ); ?>
-
-</section>
-
- <?php get_sidebar('page'); ?>
+	</section>
+</div>
 
 <?php get_footer(); ?>

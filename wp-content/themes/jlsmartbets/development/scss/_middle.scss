@@ -2,8 +2,33 @@
 @import '_tools';
 @import '_grid';
 
+/* BEGIN align footer bottom  */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    min-height: 100%;
+    @include displayFlex();
+    @include flexDirection(column);
+    @include alignItems(stretch);
+}
+
+main {
+    @include flexGrow(1);
+}
+
+header, main, footer {
+    @include flexShrink(0);
+}
+/* END align footer bottom  */
+
+
 // Button Styling
-.main-content-button a, .button {
+.main-content-button a, 
+.button,
+section.about p:last-of-type a:last-of-type {
 	background: $black;
 	padding: 8px 30px;
 	@include transition(all 0.15s ease);
@@ -108,4 +133,34 @@
 			}
 		}
 	}
+}
+
+/* cms-pages */
+section.cms-pages {
+	h1 {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* about */
+section.about {
+	p:last-of-type {
+		text-align: center;
+		a:last-of-type {
+			margin: 20px auto;
+			display: inline-block;
+			@media #{$medium} {
+				margin: 30px auto;
+			}
+			@media #{$large} {
+				margin: 50px auto;
+			}
+		}
+	}
+}
+
+/* membership */
+.membership-content-container {
+	text-align: center;
 }
