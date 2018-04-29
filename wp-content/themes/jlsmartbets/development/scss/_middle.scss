@@ -3,12 +3,13 @@
 @import '_grid';
 
 // Button Styling
-.main-content-button a, button {
+.main-content-button a, .button {
 	background: $black;
 	padding: 8px 30px;
 	@include transition(all 0.15s ease);
 	display: inline-block;
 	border: 1px solid $black;
+	@include rounded-corners(5px);
 	@media #{$medium} {
 		padding: 14px 45px;
 	}
@@ -29,7 +30,7 @@
 			@include displayFlex();
 			@include flexWrap(wrap);
 			@include alignItems(center);
-			padding: 10 12px;
+			padding: 10px 12px;
 			@media #{$medium} {
 				width: 50%;
 				@include order(2);
@@ -60,6 +61,50 @@
 			}
 			img {
 				width: 100%;
+			}
+		}
+	}
+}
+
+/* Product Feed */
+.product-feed-container {
+	margin: 20px 0;
+	display: inline-block;
+	@media #{$medium} {
+		margin: 30px 0;
+	}
+	@media #{$large} {
+		margin: 50px 0;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			list-style: none;
+			@include column(6);
+			margin-top: 10px;
+			margin-bottom: 10px;
+			@media #{$medium} {
+				@include column(3);
+			}
+			a {
+				display: inline-block;
+				text-align: center;
+				width: 100%;
+				.product-feed-image-container {
+					width: 100%;
+					display: block;
+					text-align: center;
+					img {
+						display: inline-block;
+						width: 100%;
+					}
+				}
+				.product-feed-title {
+					width: 100%;
+					display: block;
+					margin: 10px 0;
+				}
 			}
 		}
 	}

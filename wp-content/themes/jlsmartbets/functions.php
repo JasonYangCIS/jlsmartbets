@@ -856,32 +856,32 @@ function gform_column_splits( $content, $field, $value, $lead_id, $form_id ) {
 }
 add_filter( 'gform_field_content', 'gform_column_splits', 10, 5 );
 
-if( function_exists('acf_add_options_page') ) {
+// if( function_exists('acf_add_options_page') ) {
 
-  $option_page = acf_add_options_page(array(
-    'page_title'  => 'Footer Settings',
-    'menu_title'  => 'Footer Settings',
-    'menu_slug'   => 'footer-settings',
-    'capability'  => 'edit_pages',
-    'redirect'  => false
-  ));
+//   $option_page = acf_add_options_page(array(
+//     'page_title'  => 'Footer Settings',
+//     'menu_title'  => 'Footer Settings',
+//     'menu_slug'   => 'footer-settings',
+//     'capability'  => 'edit_pages',
+//     'redirect'  => false
+//   ));
 
-  $option_page = acf_add_options_page(array(
-    'page_title'  => 'Header Settings',
-    'menu_title'  => 'Header Settings',
-    'menu_slug'   => 'header(string)-settings',
-    'capability'  => 'edit_pages',
-    'redirect'  => false
-  ));
+//   $option_page = acf_add_options_page(array(
+//     'page_title'  => 'Header Settings',
+//     'menu_title'  => 'Header Settings',
+//     'menu_slug'   => 'header(string)-settings',
+//     'capability'  => 'edit_pages',
+//     'redirect'  => false
+//   ));
 
-  $option_page = acf_add_options_page(array(
-    'page_title'  => 'Product Archive Settings',
-    'menu_title'  => 'Product Archive Settings',
-    'menu_slug'   => 'product-settings',
-    'capability'  => 'edit_pages',
-    'redirect'  => false
-  ));
-}
+//   $option_page = acf_add_options_page(array(
+//     'page_title'  => 'Product Archive Settings',
+//     'menu_title'  => 'Product Archive Settings',
+//     'menu_slug'   => 'product-settings',
+//     'capability'  => 'edit_pages',
+//     'redirect'  => false
+//   ));
+// }
 
 /**
  * Ensure cart contents update when products are added to the cart via AJAX
