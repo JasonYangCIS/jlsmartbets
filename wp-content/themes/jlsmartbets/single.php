@@ -8,11 +8,12 @@
  */
 
 get_header(); ?>
+<div class="wrapper">
+	<section class="content content-full">
 
-<section class="content content-left">
+		<?php get_template_part( 'loop', 'single' ); ?>
 
-	<?php get_template_part( 'loop', 'single' ); ?>
+	</section>
+</div>
 
-</section>
-<div class="sidebar-right"><?php get_sidebar(); ?></div>
 <?php get_footer(); ?>

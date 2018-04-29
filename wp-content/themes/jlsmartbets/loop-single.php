@@ -46,25 +46,3 @@
   <?php // comments_template( '', true ); ?>
 
 <?php endwhile; // end of the loop. ?>
-<?php
-$prev_post = get_adjacent_post( true, '', true );
-$next_post = get_adjacent_post( true, '', false );
-if($next_post == '')
-{
-  $next_post = get_boundary_post();
-}
-if($prev_post == '')
-{
-  $prev_post = get_boundary_post(false, '', false); 
-}
-$prev_post_id = $prev_post->ID;
-$next_post_id = $next_post->ID;   ?>
-
-
-<div id="nav-below" class="navigation">
-  <div class="nav-previous"><a href="<?php echo get_permalink($prev_post); ?>"><?php echo __('View Older','ReadyArtwork'); ?></a></div>
-  <div class="nav-next"><a href="<?php echo get_permalink($next_post); ?>"><?php echo __('View Newer','ReadyArtwork'); ?></a></div>
-</div><!-- #nav-below -->
-
-
-

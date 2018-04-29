@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
         jQuery('.slickslider ul.slides').slick();
     }
 
-     /* Mobile hamburger toggle */
+    /* Mobile hamburger toggle */
     jQuery('.mobile-hamburger').click(function(){
         jQuery(this).toggleClass('active');
         jQuery('.menu-header-container').toggleClass('active');
@@ -34,6 +34,25 @@ jQuery(document).ready(function() {
         	return false;
         });
     });
+
+    var productQtyBox = jQuery('.woocommerce div.product form.cart div.quantity');
+    if ( productQtyBox.length > 0 ) {  
+        productQtyBox.append('<span class="up-arrow">+</span><span class="down-arrow">-</span>');
+
+        jQuery('.up-arrow').click(function(){
+            var currentQty = jQuery(this).closest('.quantity').find('input[type="number"]').val();
+            currentQty++;
+            jQuery(this).closest('.quantity').find('input[type="number"]').val(currentQty);
+        });
+
+        jQuery('.down-arrow').click(function(){
+            var currentQty = jQuery(this).closest('.quantity').find('input[type="number"]').val();
+            if ( currentQty > 0 ) {
+                currentQty--;
+                jQuery(this).closest('.quantity').find('input[type="number"]').val(currentQty);
+            }
+        });
+    }
 });
 
 

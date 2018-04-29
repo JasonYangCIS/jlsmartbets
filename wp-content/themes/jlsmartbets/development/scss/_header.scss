@@ -43,27 +43,33 @@ header#header {
 			height: 16px;
 			width: 16px;
 		}
-		.cart-contents:before {
-			content: "";
-			display: block;
-			background: url('../img/cart.png');
-			background-size: 100%;
-			background-repeat: no-repeat;
-			height: 20px;
-			width: 20px;
-		}
-		.cart-contents:hover {
-			text-decoration: none;
-		}
-		.cart-contents-count {
-			color: #fff;
-			background-color: #2ecc71;
-			font-weight: bold;
-			border-radius: 10px;
-			padding: 1px 6px;
-			line-height: 1;
-			font-family: Arial, Helvetica, sans-serif;
-			vertical-align: top;
+		.cart-contents {
+			position: relative;
+			&:before {
+				content: "";
+				display: block;
+				background: url('../img/cart.png');
+				background-size: 100%;
+				background-repeat: no-repeat;
+				height: 20px;
+				width: 20px;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			.cart-contents-count {
+				background-color: $red;
+				@include rounded-corners(50%);
+				padding: 5px;
+				position: absolute;
+				top: -13px;
+				right: -13px;
+				height: 20px;
+				width: 20px;
+				@include displayFlex();
+				@include alignItems(center);
+				@include justifyContent(center);
+			}
 		}
 	}
 	.header_container {

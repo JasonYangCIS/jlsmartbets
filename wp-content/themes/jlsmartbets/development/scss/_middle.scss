@@ -4,49 +4,53 @@
 
 /* BEGIN align footer bottom  */
 html, body {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 #container {
-    min-height: 100%;
-    @include displayFlex();
-    @include flexDirection(column);
-    @include alignItems(stretch);
+	min-height: 100%;
+	@include displayFlex();
+	@include flexDirection(column);
+	@include alignItems(stretch);
 }
 
 main {
-    @include flexGrow(1);
+	@include flexGrow(1);
 }
 
 header, main, footer {
-    @include flexShrink(0);
+	@include flexShrink(0);
 }
 /* END align footer bottom  */
 
 
-// Button Styling
+/* Button Styling */
 .main-content-button a, 
 .button,
 section.about p:last-of-type a:last-of-type,
-input[type=button] {
+input[type=button],
+.woocommerce .product-feed-container ul li a.button,
+.woocommerce div.product form.cart .button {
 	background: $black;
-	padding: 8px 30px;
+	padding: 8px 30px !important;
 	@include transition(all 0.15s ease);
 	display: inline-block;
 	border: 1px solid $black;
 	@include rounded-corners(5px);
+	height: auto;
 	@media #{$medium} {
-		padding: 14px 45px;
+		padding: 14px 45px !important;
 	}
 	@media #{$large} {
-		padding: 20px 60px;
+		padding: 20px 60px !important;
 	}
 	&:hover {
 		background: $white;
 	}
 }
 
+/* Homepage */
 .front-page-content {
 	article {
 		@include displayFlex();
@@ -113,6 +117,12 @@ input[type=button] {
 			@media #{$medium} {
 				@include column(3);
 			}
+			&:nth-of-type(2n+1) {
+				clear: left;
+				@media #{$medium} {
+					clear: none;
+				}
+			}
 			a {
 				display: inline-block;
 				text-align: center;
@@ -164,4 +174,116 @@ section.about {
 /* membership */
 .membership-content-container {
 	text-align: center;
+}
+
+/* woocommerce */
+.woocommerce {
+	margin-bottom: 20px;
+	span.onsale {
+		background: $dkgrey !important;
+		width: 30px;
+		height: 30px;
+	}
+	.woocommerce-message {
+		// border-top-color: $red;
+		// &:before {
+		// 	color: $red;
+		// }
+	}
+	div.product {
+		.summary {
+			p.price {
+				@include displayFlex();
+				ins {
+					@include order(1);
+				}
+				del {
+					@include displayFlex();
+					@include alignItems(baseline);
+					@include order(2);
+					> span {
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+		div.images .flex-control-thumbs li {
+			width: calc(33.33% - 6px) !important;
+			margin-top: 10px !important;
+			@media #{$medium} {
+				margin-top: 20px !important;
+				width: calc(33.33% - 12px) !important;
+			}
+			&:nth-of-type(3n+1) {
+				margin-right: 6px;
+				@media #{$medium} {
+					margin-right: 12px;
+				}
+			}
+			&:nth-of-type(3n+2) {
+				margin-right: 3px;
+				margin-left: 3px;
+				@media #{$medium} {
+					margin-right: 6px;
+					margin-left: 6px;
+				}
+			}
+			&:nth-of-type(3n+3) {
+				margin-left: 6px;
+				@media #{$medium} {
+					margin-left: 12px;
+				}
+			}
+			img {
+				border: 1px solid transparent;
+				&.flex-active {
+					border: 1px solid $mdgrey;
+				}
+			}
+		}
+		form.cart {
+			@include displayFlex();
+			div.quantity {
+				@include displayFlex();
+				@include order(2);
+				padding-left: 10px;
+				position: relative;
+				height: 51px;
+				width: 79px;
+				@include rounded-corners(5px);
+				input[type="number"]{
+					height: 50px;
+					width: 70px;
+					padding-right: 30px;
+					border: 1px solid $ltmdgrey;
+					@include rounded-corners(5px);
+				}
+				input[type=number]::-webkit-inner-spin-button, 
+				input[type=number]::-webkit-outer-spin-button { 
+					-webkit-appearance: none; 
+					margin: 0; 
+				}
+				span.up-arrow, span.down-arrow {
+					position: absolute;
+					height: 26px;
+					width: 30px;
+					right: 0;
+					z-index: 100;
+					border-left: 1px solid $ltmdgrey;
+					cursor: pointer;
+					@include displayFlex();
+					@include alignItems(center);
+					@include justifyContent(center);
+				}
+				span.up-arrow {
+					top: 0;
+					border-bottom: 1px solid $ltmdgrey;
+				}
+				span.down-arrow {
+					bottom: 0;
+					border-top: 1px solid $ltmdgrey;
+				}
+			}
+		}
+	}
 }
