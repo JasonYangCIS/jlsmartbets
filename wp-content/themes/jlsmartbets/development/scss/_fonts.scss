@@ -196,8 +196,11 @@ h6 {
 section.about p:last-of-type a:last-of-type,
 input[type=button],
 .woocommerce .product-feed-container ul li a.button,
-.woocommerce div.product form.cart .button {
-	color: $white;
+.woocommerce div.product form.cart .button,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+	color: $white !important;
 	font-weight: 700;
 	@include rfs(10);
 	line-height: 12px;
@@ -212,7 +215,7 @@ input[type=button],
 		line-height: 18px;
 	}
 	&:hover {
-		color: $black;
+		color: $black !important;
 	}
 }
 

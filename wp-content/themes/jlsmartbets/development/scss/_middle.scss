@@ -31,8 +31,11 @@ header, main, footer {
 section.about p:last-of-type a:last-of-type,
 input[type=button],
 .woocommerce .product-feed-container ul li a.button,
-.woocommerce div.product form.cart .button {
-	background: $black;
+.woocommerce div.product form.cart .button,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+	background: $black !important;
 	padding: 8px 30px !important;
 	@include transition(all 0.15s ease);
 	display: inline-block;
@@ -46,7 +49,7 @@ input[type=button],
 		padding: 20px 60px !important;
 	}
 	&:hover {
-		background: $white;
+		background: $white !important;
 	}
 }
 
@@ -183,12 +186,9 @@ section.about {
 		background: $dkgrey !important;
 		width: 30px;
 		height: 30px;
-	}
-	.woocommerce-message {
-		// border-top-color: $red;
-		// &:before {
-		// 	color: $red;
-		// }
+		@include displayFlex();
+		@include justifyContent(center);
+		@include alignItems(center);
 	}
 	div.product {
 		.summary {
@@ -243,6 +243,7 @@ section.about {
 		}
 		form.cart {
 			@include displayFlex();
+			@include alignItems(center);
 			div.quantity {
 				@include displayFlex();
 				@include order(2);
@@ -284,6 +285,22 @@ section.about {
 					border-top: 1px solid $ltmdgrey;
 				}
 			}
+		}
+	}
+
+	&.woocommerce-info {
+		margin-top: 20px;
+	}
+
+	section.related {
+		h3.title {
+			width: 100%;
+			display: inline-block;
+			margin: 20px 0 0 0;
+			text-align: center;
+		}
+		.products.columns-4 {
+			@include row(12);
 		}
 	}
 }
