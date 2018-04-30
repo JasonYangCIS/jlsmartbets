@@ -181,7 +181,12 @@ section.about {
 
 /* woocommerce */
 .woocommerce {
+	margin-top: 20px;
 	margin-bottom: 20px;
+	@media #{$large} {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 	span.onsale {
 		background: $dkgrey !important;
 		width: 30px;
@@ -288,9 +293,6 @@ section.about {
 		}
 	}
 
-	&.woocommerce-info {
-		margin-top: 20px;
-	}
 
 	section.related {
 		h3.title {
