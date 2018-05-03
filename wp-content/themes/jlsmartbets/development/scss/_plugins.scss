@@ -111,7 +111,9 @@
     }
     .slide {
         position: relative;
-
+        img {
+            width: 100%;
+        }
         .slider-content-container {
             position: absolute;
             top: 0;

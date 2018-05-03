@@ -103,6 +103,7 @@ input[type=button],
 .product-feed-container {
 	margin: 20px 0;
 	display: inline-block;
+	width: 100%;
 	@media #{$medium} {
 		margin: 30px 0;
 	}

@@ -19,7 +19,7 @@
 <?php endif; ?>
 
 <footer id="footer" class="footer">
-  <!-- <a class="back-to-top" href="javascript:void(0);"></a> -->
+  <a class="back-to-top" href="javascript:void(0);"><span></span></a>
   <div class="wrapper">
     <div class="footer-logo">
       <a class="logo" href="<?php echo home_url()?>">
