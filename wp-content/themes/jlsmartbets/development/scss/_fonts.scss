@@ -223,6 +223,7 @@ footer#footer {
 	.menu-footer-menu-container a {
 		@include rfs(10);
 		line-height: 12px;
+		color: $white;
 		@media #{$medium} {
 			@include rfs(12);
 			line-height: 14px;
