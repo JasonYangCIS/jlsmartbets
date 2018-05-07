@@ -306,4 +306,7 @@ section.about {
 			@include row(12);
 		}
 	}
+	.woocommerce-form__label #rememberme {
+		margin-left: 20px;
+	}
 }
