@@ -20,7 +20,7 @@ header#header {
 		@include justifyContent(space-around);
 		@include alignItems(center);
 		@media #{$large} {
-			@include column(2);
+			@include column(1.5);
 			@include displayFlex();
 			@include order(3);
 			position: relative;
@@ -167,7 +167,7 @@ header#header {
 		overflow: hidden;
 		@include transition(0.3s all ease);
 		@media #{$large} {
-			@include column(8);
+			@include column(8.5);
 			max-height: 1000px;
 			opacity: 1;
 			@include order(2);
@@ -200,6 +200,9 @@ header#header {
 				margin: 30px 0;
 				@media #{$large} {
 					display: inline-block;
+					padding: 0 1%;
+				}
+				@media #{$xlarge} {
 					padding: 0 20px;
 				}
 			}
